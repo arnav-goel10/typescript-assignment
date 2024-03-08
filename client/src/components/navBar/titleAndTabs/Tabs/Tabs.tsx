@@ -4,8 +4,8 @@ import "./Tabs.css";
 const Tabs = () => {
     return (
         <div className="tab-container">
-            <span className="tab selected">Main</span>
-            <span className="tab">Settings</span>
+            <span className="selected">Main</span>
+            <span className="">Settings</span>
         </div>
     );
 };

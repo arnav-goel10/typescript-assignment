@@ -6,4 +6,5 @@ body {
             rgba(255, 255, 255, 0.08) 0%,
             rgba(255, 255, 255, 0.04) 100%
         );
+    background-blend-mode: overlay;
 }

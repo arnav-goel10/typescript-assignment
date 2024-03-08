@@ -1,25 +1,12 @@
 .tab-container {
     display: "flex";
     flex-direction: "row";
-    gap: 24px;
-    width: Hug (120px);
-    height: Hug (48px);
     color: #ffffff99;
-}
-
-.tab {
-    width: Hug (60px);
-    height: Fixed (48px);
     padding: 6px, 0px, 0px, 0px;
-    gap: 16px;
 }
 
 .selected {
     color: #8dcafe;
-    width: Hug (36px);
-    height: Fixed (48px);
-    padding: 6px, 0px, 0px, 0px;
     border: 0px, 0px, 2px, 0px;
-    gap: 16px;
     border-bottom: 2px solid #8dcafe;
 }
