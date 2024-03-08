@@ -3,10 +3,11 @@
     flex-direction: "row";
     color: #ffffff99;
     padding: 6px, 0px, 0px, 0px;
+    gap: 24px;
 }
 
 .selected {
     color: #8dcafe;
     border: 0px, 0px, 2px, 0px;
-    border-bottom: 2px solid #8dcafe;
+    border-bottom: 2px solid rgba(141, 202, 254, 1);
 }

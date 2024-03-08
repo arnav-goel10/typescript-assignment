@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     width: Fixed (1, 320px);
+    height: Hug (48px);
     margin-top: 24px;
     margin-left: 32px;
-    border: 0px, 0px, 1px, 0px;
     gap: 8px;
-    border-bottom: 1px solid #ffffff1f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    align-items: center;
 }
