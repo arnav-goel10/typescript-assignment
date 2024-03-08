@@ -1,0 +1,10 @@
+.abc {
+    display: flex;
+    flex-direction: row;
+    width: Fixed (1, 320px);
+    height: Hug (48px);
+    top: 24px;
+    left: 32px;
+    border: 0px, 0px, 1px, 0px;
+    gap: 8px;
+}

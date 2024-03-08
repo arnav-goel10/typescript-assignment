@@ -3,9 +3,9 @@ import "./Tabs.css";
 
 const Tabs = () => {
     return (
-        <div style={{ display: "flex" }}>
-            <div>Component 1</div>
-            <div>Component 2</div>
+        <div className="tab-container">
+            <div className="tab">Main</div>
+            <div className="tab">Settings</div>
         </div>
     );
 };
