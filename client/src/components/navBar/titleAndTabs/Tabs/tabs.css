@@ -20,4 +20,7 @@
 .selected {
     border-bottom: 2px solid rgba(141, 202, 254, 1);
     color: rgba(141, 202, 254, 1);
+    z-index: 1;
+    position: relative;
+    margin-bottom: -18px;
 }
