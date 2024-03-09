@@ -5,6 +5,7 @@
     height: 24px;
     padding-top: 6px;
     gap: 24px;
+    user-select: none;
 }
 
 .tab {
