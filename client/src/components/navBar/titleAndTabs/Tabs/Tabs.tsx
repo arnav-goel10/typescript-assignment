@@ -5,7 +5,7 @@ const Tabs = () => {
     return (
         <div className="tab-container">
             <span className="selected">Main</span>
-            <span className="">Settings</span>
+            <span className="tab">Settings</span>
         </div>
     );
 };

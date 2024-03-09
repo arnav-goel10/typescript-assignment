@@ -1,11 +1,13 @@
 .titleandtabs {
     display: flex;
     flex-direction: row;
-    width: Fixed (1, 320px);
-    height: Hug (48px);
     margin-top: 24px;
     margin-left: 32px;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 40px;
     align-items: center;
+    padding-right: 32px;
+    width: Hug (355px);
+    height: Fixed (48px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 16px;
 }
