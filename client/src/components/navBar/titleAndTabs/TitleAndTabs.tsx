@@ -5,7 +5,7 @@ import "./TitleAndTabs.css";
 
 const TitleAndTabs = () => {
     return (
-        <div className="abc">
+        <div className="titleandtabs">
             <Title />
             <Tabs />
         </div>
