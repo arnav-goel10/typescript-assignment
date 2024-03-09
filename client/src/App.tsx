@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
-import Settings from "./pages/Settings"; // Adjust the import path as necessary
-import Main from "./pages/Main";
+import Settings from "./pages/Settings/Settings";
+import Main from "./pages/Main/Main";
 
 const App: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<"Main" | "Settings">("Main");
