@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Tabs.css";
 
-const Tabs: React.FC = () => {
-    const [selectedTab, setSelectedTab] = useState<string>("Main");
+interface TabsProps {
+    onTabChange: (tab: "Main" | "Settings") => void;
+    currentTab: "Main" | "Settings";
+}
 
-    const handleTabClick = (tabName: string) => {
-        setSelectedTab(tabName);
-    };
-
+const Tabs: React.FC<TabsProps> = ({ onTabChange, currentTab }) => {
     return (
         <div className="tab-container">
             <span
-                className={selectedTab === "Main" ? "selected" : "tab"}
-                onClick={() => handleTabClick("Main")}
+                className={currentTab === "Main" ? "selected" : "tab"}
+                onClick={() => onTabChange("Main")}
             >
                 Main
             </span>
             <span
-                className={selectedTab === "Settings" ? "selected" : "tab"}
-                onClick={() => handleTabClick("Settings")}
+                className={currentTab === "Settings" ? "selected" : "tab"}
+                onClick={() => onTabChange("Settings")}
             >
                 Settings
             </span>
