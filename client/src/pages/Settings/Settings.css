@@ -5,6 +5,7 @@
     gap: 4px;
     margin-top: 32px;
     margin-left: 32px;
+    width: 912px;
 }
 
 .item {
@@ -24,17 +25,23 @@
     height: 48px;
     border-radius: 16px;
     align-content: center;
+    align-items: center;
 }
 
 .ind {
     width: 352px;
-    height: 48px;
     padding: 16px;
     gap: 8px;
-    font-family: Roboto;
     font-size: 13px;
-    font-weight: 400;
     line-height: 16px;
     letter-spacing: 0px;
     text-align: left;
+}
+
+.npos {
+    width: Fixed (140px);
+    padding: 16px;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 16px;
 }
