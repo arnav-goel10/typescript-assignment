@@ -1,0 +1,13 @@
+.notification-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 4px;
+}
+
+.notification {
+    width: Fixed (912px);
+    height: Hug (48px);
+    margin-left: 32px;
+    border-radius: 16px;
+}

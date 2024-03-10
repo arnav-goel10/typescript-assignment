@@ -3,11 +3,38 @@
     flex-direction: column;
     margin-top: 32px;
     gap: 4px;
+    margin-top: 32px;
+    margin-left: 32px;
 }
 
 .item {
+    display: flex;
+    flex-direction: row;
     width: Fixed (912px);
     height: Hug (48px);
     margin-left: 32px;
     border-radius: 16px;
+    background: linear-gradient(0deg, #030919, #030919),
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0.16)
+        );
+    background-blend-mode: overlay;
+    height: 48px;
+    border-radius: 16px;
+    align-content: center;
+}
+
+.ind {
+    width: 352px;
+    height: 48px;
+    padding: 16px;
+    gap: 8px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
 }

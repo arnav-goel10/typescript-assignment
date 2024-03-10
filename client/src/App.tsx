@@ -11,7 +11,9 @@ const App: React.FC = () => {
             case "Main":
                 return <Main />;
             case "Settings":
-                return <Settings />;
+                return (
+                    <Settings notiCount={2} notiDissapear={10} notiPos={1} />
+                );
             default:
                 return null;
         }
