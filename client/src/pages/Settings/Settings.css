@@ -49,6 +49,7 @@
 .radio-button {
     width: 16px;
     height: 16px;
-    margin-top: auto;
-    margin-bottom: auto;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-left: 15px;
 }
