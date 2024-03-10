@@ -14,10 +14,11 @@ const Settings: React.FC<SettingsProps> = ({
     notiDissapear,
     onNotiPosChange,
 }) => {
-    const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleRadioChange = async (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
         const newPos = parseInt(event.target.value, 10) as 1 | 2 | 3 | 4;
         onNotiPosChange(newPos);
-        console.log("lol", newPos);
     };
 
     return (
@@ -30,7 +31,7 @@ const Settings: React.FC<SettingsProps> = ({
                 <span className="ind">Notification position</span>
                 <div>
                     {[1, 2, 3, 4].map((pos) => (
-                        <span className="npos">
+                        <span className="npos" key={pos}>
                             <label htmlFor={"pos" + pos} key={pos}>
                                 {"Position " + pos}
                             </label>
@@ -39,7 +40,7 @@ const Settings: React.FC<SettingsProps> = ({
                                 id={"pos" + pos}
                                 name="notiPos"
                                 value={pos}
-                                checked={notiPos === pos}
+                                checked={notiPos == pos}
                                 onChange={handleRadioChange}
                                 style={{ width: "16px", height: "16px" }}
                             />

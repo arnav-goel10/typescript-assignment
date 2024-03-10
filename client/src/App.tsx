@@ -19,9 +19,9 @@ const App: React.FC = () => {
             case "Settings":
                 return (
                     <Settings
-                        notiCount={2}
-                        notiDissapear={10}
-                        notiPos={1}
+                        notiCount={notiCount}
+                        notiDissapear={notiDissapear}
+                        notiPos={notiPos}
                         onNotiPosChange={handleNotiPosChange}
                     />
                 );
