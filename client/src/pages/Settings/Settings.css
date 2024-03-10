@@ -43,5 +43,16 @@
     padding: 16px;
     gap: 8px;
     font-size: 13px;
-    line-height: 16px;
+    line-height: 13px;
+}
+
+.radio-button {
+    width: 16px;
+    height: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+input[type="radio"] {
+    accent-color: #ff0000;
 }

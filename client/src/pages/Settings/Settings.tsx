@@ -32,17 +32,17 @@ const Settings: React.FC<SettingsProps> = ({
                 <div>
                     {[1, 2, 3, 4].map((pos) => (
                         <span className="npos" key={pos}>
-                            <label htmlFor={"pos" + pos} key={pos}>
+                            <label htmlFor={pos.toString()} key={pos}>
                                 {"Position " + pos}
                             </label>
                             <input
                                 type="radio"
-                                id={"pos" + pos}
+                                id={pos.toString()}
                                 name="notiPos"
                                 value={pos}
-                                checked={notiPos == pos}
+                                checked={notiPos === pos}
                                 onChange={handleRadioChange}
-                                style={{ width: "16px", height: "16px" }}
+                                className="radio-button"
                             />
                         </span>
                     ))}
