@@ -52,4 +52,30 @@
     vertical-align: middle;
     margin-top: -3px;
     margin-left: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.radio-button:checked {
+    border: 2px solid rgba(141, 202, 254, 0.9);
+}
+
+.radio-button:checked::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(141, 202, 254, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
