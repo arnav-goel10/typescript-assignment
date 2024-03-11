@@ -1,7 +1,7 @@
 import React from "react";
-
+import "./Notification.css";
 const Notification = () => {
-    return <div>Notification</div>;
+    return <span className="notification">Notification</span>;
 };
 
 export default Notification;
