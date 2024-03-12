@@ -15,13 +15,11 @@ const Notification: React.FC<NotificationProps> = ({ msg_id, time, msg }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
-        }, time * 1000); // Convert time to milliseconds for setTimeout
+        }, (Math.floor(Math.random() * 8) + 1) * 1000);
 
-        // Cleanup function
         return () => clearTimeout(timer);
     }, [time]);
 
-    // Function to manually hide the notification
     const handleCrossClick = () => {
         setIsVisible(false);
     };
