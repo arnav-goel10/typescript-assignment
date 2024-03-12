@@ -1,6 +1,6 @@
 .notification-box {
     width: 328px;
-    height: 32px;
+    min-height: 32px;
     padding: 16px;
     border-radius: 16px;
     background-color: rgba(44, 49, 62, 0.4);
@@ -13,4 +13,6 @@
 .notiText {
     color: rgba(255, 255, 255, 0.9);
     font-size: 13x;
+    text-wrap: wrap;
+    white-space: normal;
 }

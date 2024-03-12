@@ -4,7 +4,9 @@ import Cross from "./Cross/Cross";
 const Notification = () => {
     return (
         <span className="notification-box">
-            <span className="notiText">Notification</span>
+            <span className="notiText">
+                LOLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLlll
+            </span>
             <Cross />
         </span>
     );
