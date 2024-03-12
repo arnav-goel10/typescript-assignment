@@ -1,8 +1,16 @@
 import React from "react";
 import "./Cross.css";
 
-const Cross = () => {
-    return <button className="cross">&#10005;</button>;
+interface CrossProps {
+    onClick: () => void;
+}
+
+const Cross: React.FC<CrossProps> = ({ onClick }) => {
+    return (
+        <button className="cross" onClick={onClick}>
+            &#10005;
+        </button>
+    );
 };
 
 export default Cross;
