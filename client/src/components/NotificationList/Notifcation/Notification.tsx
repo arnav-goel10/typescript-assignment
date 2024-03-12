@@ -1,14 +1,17 @@
 import React from "react";
 import "./Notification.css";
 import Cross from "./Cross/Cross";
-const Notification = () => {
+
+interface NotificationProps {
+    msg_id: string;
+    time: number;
+    msg: string;
+}
+
+const Notification: React.FC<NotificationProps> = ({ msg_id, time, msg }) => {
     return (
         <div className="notification-box">
-            <span className="notiText">
-                To solve this issue and ensure that such long strings wrap
-                within their container, you just checking if it still continues
-                working or not
-            </span>
+            <span className="notiText">{msg}</span>
             <Cross />
         </div>
     );
