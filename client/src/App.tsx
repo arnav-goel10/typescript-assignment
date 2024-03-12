@@ -20,7 +20,6 @@ const App: React.FC = () => {
                         notiCount={notiCount}
                         notiDissapear={notiDissapear}
                         notiPos={notiPos}
-                        onNotiPosChange={handleNotiPosChange}
                     />
                 );
             case "Settings":

@@ -2,7 +2,17 @@ import React from "react";
 import Notification from "./Notifcation/Notification";
 import "./NotificationList.css";
 
-const NotificationList = () => {
+interface NotificationListProps {
+    notiCount: number;
+    notiPos: 1 | 2 | 3 | 4;
+    notiDissapear: number;
+}
+
+const NotificationList: React.FC<NotificationListProps> = ({
+    notiCount,
+    notiPos,
+    notiDissapear,
+}) => {
     return (
         <div className="notification-list">
             <Notification

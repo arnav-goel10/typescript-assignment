@@ -6,25 +6,16 @@ interface MainProps {
     notiCount: number;
     notiPos: 1 | 2 | 3 | 4;
     notiDissapear: number;
-    onNotiPosChange: (pos: 1 | 2 | 3 | 4) => void;
 }
 
-const Main: React.FC<MainProps> = ({
-    notiCount,
-    notiPos,
-    notiDissapear,
-    onNotiPosChange,
-}) => {
-    const handleRadioChange = async (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        const newPos = parseInt(event.target.value, 10) as 1 | 2 | 3 | 4;
-        onNotiPosChange(newPos);
-    };
-
+const Main: React.FC<MainProps> = ({ notiCount, notiPos, notiDissapear }) => {
     return (
         <div className="notification-container">
-            <NotificationList />
+            <NotificationList
+                notiCount={notiCount}
+                notiPos={notiPos}
+                notiDissapear={notiDissapear}
+            />
         </div>
     );
 };
