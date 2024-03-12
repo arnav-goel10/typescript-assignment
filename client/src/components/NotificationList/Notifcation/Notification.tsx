@@ -21,7 +21,7 @@ const Notification: React.FC<NotificationProps> = ({
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
-        }, disappearTime * 1000);
+        }, disappearTime * 10000);
 
         return () => clearTimeout(timer);
     }, [time]);
