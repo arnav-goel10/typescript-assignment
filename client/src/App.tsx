@@ -15,7 +15,14 @@ const App: React.FC = () => {
     const renderPage = () => {
         switch (currentPage) {
             case "Main":
-                return <Main />;
+                return (
+                    <Main
+                        notiCount={notiCount}
+                        notiDissapear={notiDissapear}
+                        notiPos={notiPos}
+                        onNotiPosChange={handleNotiPosChange}
+                    />
+                );
             case "Settings":
                 return (
                     <Settings
