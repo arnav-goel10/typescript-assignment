@@ -5,7 +5,7 @@ import Main from "./pages/Main/Main";
 
 const App: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<"Main" | "Settings">("Main");
-    const [notiCount, setNotiCount] = useState<number>(0);
+    const [notiCount, setNotiCount] = useState<number>(5);
     const [notiPos, setNotiPos] = useState<1 | 2 | 3 | 4>(1);
     const [notiDissapear, setNotiDissapear] = useState<number>(5);
     const handleNotiPosChange = (newPos: 1 | 2 | 3 | 4) => {

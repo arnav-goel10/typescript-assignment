@@ -1,33 +1,46 @@
-import React from "react";
-import Notification from "./Notifcation/Notification";
+import React, { useState, useCallback } from "react";
 import "./NotificationList.css";
+import { useSSE } from "../../hooks/useSSE";
+import Notification from "./Notifcation/Notification";
 
-interface NotificationListProps {
-    notiCount: number;
-    notiPos: 1 | 2 | 3 | 4;
-    notiDissapear: number;
+interface NotificationMessage {
+    msg_id: string;
+    time: number;
+    msg: string;
 }
 
-const NotificationList: React.FC<NotificationListProps> = ({
-    notiCount,
-    notiPos,
-    notiDissapear,
-}) => {
+const NotificationList: React.FC<{
+    notiCount: number;
+    notiPos: 1 | 2 | 3 | 4;
+    notiDisappear: number;
+}> = ({ notiCount, notiPos, notiDisappear }) => {
+    const [notifications, setNotifications] = useState<NotificationMessage[]>(
+        []
+    );
+
+    // Memoize the callback using useCallback
+    const handleNewNotification = useCallback(
+        (notification: NotificationMessage) => {
+            setNotifications((prev) =>
+                [...prev, notification].slice(-notiCount)
+            );
+        },
+        [notiCount]
+    ); // Dependency on notiCount, if it changes, the callback is updated
+
+    useSSE("http://localhost:9000/events", handleNewNotification);
+
     return (
-        <div className="notification-list">
-            <Notification
-                msg_id="10"
-                time={4}
-                msg="Your goal is to implement a frontend of a notification system based on Server-Sent Events (SSE) technology, following the restrictions and design layout described below.
-You may use this project template with prepared webpack config, eslint config and tsconfig."
-                disappearTime={notiDissapear}
-            />
-            <Notification
-                msg_id="10"
-                time={6}
-                msg="This is notification message"
-                disappearTime={notiDissapear}
-            />
+        <div className={`notification-list position-${notiPos}`}>
+            {notifications.map((notification) => (
+                <Notification
+                    key={notification.msg_id}
+                    msg_id={notification.msg_id}
+                    time={notification.time}
+                    msg={notification.msg}
+                    disappearTime={notiDisappear}
+                />
+            ))}
         </div>
     );
 };

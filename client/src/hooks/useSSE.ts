@@ -1,25 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-interface NotificationMessage {
-    msg_id: string;
-    time: number;
-    msg: string;
-}
-
-export const useSSE = (
-    url: string,
-    callback: (data: NotificationMessage) => void
-) => {
+export const useSSE = (url: string, onMessage: (data: any) => void) => {
     useEffect(() => {
         const eventSource = new EventSource(url);
 
         eventSource.onmessage = (event) => {
-            const data: NotificationMessage = JSON.parse(event.data);
-            callback(data);
+            const data = JSON.parse(event.data);
+            onMessage(data);
         };
 
         return () => {
             eventSource.close();
         };
-    }, [url, callback]);
+    }, [url, onMessage]);
 };

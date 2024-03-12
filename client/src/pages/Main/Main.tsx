@@ -14,7 +14,7 @@ const Main: React.FC<MainProps> = ({ notiCount, notiPos, notiDissapear }) => {
             <NotificationList
                 notiCount={notiCount}
                 notiPos={notiPos}
-                notiDissapear={notiDissapear}
+                notiDisappear={notiDissapear}
             />
         </div>
     );
