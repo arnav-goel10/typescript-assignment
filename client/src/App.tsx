@@ -7,7 +7,7 @@ const App: React.FC = React.memo(() => {
     const [currentPage, setCurrentPage] = useState<"Main" | "Settings">("Main");
     const [notiCount, setNotiCount] = useState<number>(5);
     const [notiPos, setNotiPos] = useState<1 | 2 | 3 | 4>(1);
-    const [notiDissapear, setNotiDissapear] = useState<number>(5);
+    const [notiDissapear, setNotiDissapear] = useState<number>(3);
     const handleNotiPosChange = (newPos: 1 | 2 | 3 | 4) => {
         setNotiPos(newPos);
     };
