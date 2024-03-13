@@ -3,9 +3,7 @@
     flex-direction: column;
     gap: 8px;
     position: fixed;
-    margin-left: 32px;
-    margin-right: 32px;
-    margin-bottom: 32px;
+    margin: 0px 32px 32px 32px;
 }
 
 .top-right {
