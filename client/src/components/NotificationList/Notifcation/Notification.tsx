@@ -38,7 +38,7 @@ const Notification: React.FC<NotificationProps> = React.memo(
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
             >
-                <span className="notiText">{msg}</span>
+                <span className="notification-text">{msg}</span>
                 <Cross onClick={handleCrossClick} />
             </div>
         ) : null;
