@@ -1,4 +1,3 @@
-// Notification.tsx
 import React, { useEffect, useState } from "react";
 import "./Notification.css";
 import Cross from "./Cross/Cross";
@@ -17,14 +16,34 @@ const Notification: React.FC<NotificationProps> = ({
     disappearTime,
 }) => {
     const [isVisible, setIsVisible] = useState(true);
+    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
+    // Function to start the disappearance timeout
+    const startDisappearTimeout = () => {
+        const id = setTimeout(() => {
             setIsVisible(false);
         }, disappearTime * 1000);
+        setTimeoutId(id);
+    };
 
-        return () => clearTimeout(timer);
-    }, [time]);
+    // Function to clear the disappearance timeout
+    const clearDisappearTimeout = () => {
+        if (timeoutId) clearTimeout(timeoutId);
+    };
+
+    useEffect(() => {
+        startDisappearTimeout();
+
+        return () => clearDisappearTimeout();
+    }, [disappearTime, msg_id]);
+
+    const handleMouseEnter = () => {
+        clearDisappearTimeout();
+    };
+
+    const handleMouseLeave = () => {
+        startDisappearTimeout();
+    };
 
     const handleCrossClick = () => {
         setIsVisible(false);
@@ -33,7 +52,11 @@ const Notification: React.FC<NotificationProps> = ({
     if (!isVisible) return null;
 
     return (
-        <div className="notification-box">
+        <div
+            className="notification-box"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <span className="notiText">{msg}</span>
             <Cross onClick={handleCrossClick} />
         </div>
