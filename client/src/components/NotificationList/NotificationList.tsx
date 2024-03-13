@@ -30,8 +30,21 @@ const NotificationList: React.FC<{
 
     useSSE("http://localhost:9000/events", handleNewNotification);
 
+    const getPositionClassName = () => {
+        switch (notiPos) {
+            case 1:
+                return "top-left";
+            case 2:
+                return "top-right";
+            case 3:
+                return "bottom-right";
+            case 4:
+                return "bottom-left";
+        }
+    };
+
     return (
-        <div className={`notification-list position-${notiPos}`}>
+        <div className={`notification-list ${getPositionClassName()}`}>
             {notifications.map((notification) => (
                 <Notification
                     key={notification.msg_id}
