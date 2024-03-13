@@ -8,16 +8,18 @@ interface MainProps {
     notiDissapear: number;
 }
 
-const Main: React.FC<MainProps> = ({ notiCount, notiPos, notiDissapear }) => {
-    return (
-        <div className="notification-container">
-            <NotificationList
-                notiCount={notiCount}
-                notiPos={notiPos}
-                notiDisappear={notiDissapear}
-            />
-        </div>
-    );
-};
+const Main: React.FC<MainProps> = React.memo(
+    ({ notiCount, notiPos, notiDissapear }) => {
+        return (
+            <div className="notification-container">
+                <NotificationList
+                    notiCount={notiCount}
+                    notiPos={notiPos}
+                    notiDisappear={notiDissapear}
+                />
+            </div>
+        );
+    }
+);
 
 export default Main;

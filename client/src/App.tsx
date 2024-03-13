@@ -3,11 +3,11 @@ import NavBar from "./components/NavBar/NavBar";
 import Settings from "./pages/Settings/Settings";
 import Main from "./pages/Main/Main";
 
-const App: React.FC = () => {
+const App: React.FC = React.memo(() => {
     const [currentPage, setCurrentPage] = useState<"Main" | "Settings">("Main");
     const [notiCount, setNotiCount] = useState<number>(5);
     const [notiPos, setNotiPos] = useState<1 | 2 | 3 | 4>(1);
-    const [notiDissapear, setNotiDissapear] = useState<number>(3);
+    const [notiDissapear, setNotiDissapear] = useState<number>(5);
     const handleNotiPosChange = (newPos: 1 | 2 | 3 | 4) => {
         setNotiPos(newPos);
     };
@@ -42,6 +42,6 @@ const App: React.FC = () => {
             <div>{renderPage()}</div>
         </>
     );
-};
+});
 
 export default App;

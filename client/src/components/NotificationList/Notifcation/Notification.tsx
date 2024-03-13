@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Notification.css";
 import Cross from "./Cross/Cross";
 
@@ -9,58 +9,40 @@ interface NotificationProps {
     disappearTime: number;
 }
 
-const Notification: React.FC<NotificationProps> = ({
-    msg_id,
-    time,
-    msg,
-    disappearTime,
-}) => {
-    const [isVisible, setIsVisible] = useState(true);
-    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+const Notification: React.FC<NotificationProps> = React.memo(
+    ({ msg_id, time, msg, disappearTime }) => {
+        const [isVisible, setIsVisible] = useState(true);
+        const [hover, setHover] = useState(false);
 
-    // Function to start the disappearance timeout
-    const startDisappearTimeout = () => {
-        const id = setTimeout(() => {
+        useEffect(() => {
+            let timer: ReturnType<typeof setTimeout> | null = null;
+            if (!hover && isVisible) {
+                timer = setTimeout(() => {
+                    setIsVisible(false);
+                }, disappearTime * 1000);
+            }
+            return () => {
+                if (timer) {
+                    clearTimeout(timer);
+                }
+            };
+        }, [disappearTime, hover, isVisible]);
+
+        const handleCrossClick = () => {
             setIsVisible(false);
-        }, disappearTime * 1000);
-        setTimeoutId(id);
-    };
+        };
 
-    // Function to clear the disappearance timeout
-    const clearDisappearTimeout = () => {
-        if (timeoutId) clearTimeout(timeoutId);
-    };
-
-    useEffect(() => {
-        startDisappearTimeout();
-
-        return () => clearDisappearTimeout();
-    }, [disappearTime, msg_id]);
-
-    const handleMouseEnter = () => {
-        clearDisappearTimeout();
-    };
-
-    const handleMouseLeave = () => {
-        startDisappearTimeout();
-    };
-
-    const handleCrossClick = () => {
-        setIsVisible(false);
-    };
-
-    if (!isVisible) return null;
-
-    return (
-        <div
-            className="notification-box"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            <span className="notiText">{msg}</span>
-            <Cross onClick={handleCrossClick} />
-        </div>
-    );
-};
+        return isVisible ? (
+            <div
+                className="notification-box"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+            >
+                <span className="notiText">{msg}</span>
+                <Cross onClick={handleCrossClick} />
+            </div>
+        ) : null;
+    }
+);
 
 export default Notification;

@@ -13,12 +13,11 @@ const NotificationList: React.FC<{
     notiCount: number;
     notiPos: 1 | 2 | 3 | 4;
     notiDisappear: number;
-}> = ({ notiCount, notiPos, notiDisappear }) => {
+}> = React.memo(({ notiCount, notiPos, notiDisappear }) => {
     const [notifications, setNotifications] = useState<NotificationMessage[]>(
         []
     );
 
-    // Memoize the callback using useCallback
     const handleNewNotification = useCallback(
         (notification: NotificationMessage) => {
             setNotifications((prev) =>
@@ -26,7 +25,7 @@ const NotificationList: React.FC<{
             );
         },
         [notiCount]
-    ); // Dependency on notiCount, if it changes, the callback is updated
+    );
 
     useSSE("http://localhost:9000/events", handleNewNotification);
 
@@ -56,6 +55,6 @@ const NotificationList: React.FC<{
             ))}
         </div>
     );
-};
+});
 
 export default NotificationList;
