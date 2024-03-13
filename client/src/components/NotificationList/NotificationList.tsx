@@ -33,7 +33,7 @@ const NotificationList: React.FC<{
     const getPositionClassName = () => {
         switch (notiPos) {
             case 1:
-                return "top-left";
+                return "";
             case 2:
                 return "top-right";
             case 3:
