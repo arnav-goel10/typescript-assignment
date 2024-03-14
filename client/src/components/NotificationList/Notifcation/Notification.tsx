@@ -21,6 +21,7 @@ const Notification: React.FC<NotificationProps> = React.memo(
                     setIsVisible(false);
                 }, disappearTime * 1000);
             }
+
             return () => {
                 if (timer) {
                     clearTimeout(timer);
