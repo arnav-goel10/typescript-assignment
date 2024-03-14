@@ -1,26 +1,25 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Tabs.css";
 
-interface TabsProps {
-    onTabChange: (tab: "Main" | "Settings") => void;
-    currentTab: "Main" | "Settings";
-}
-
-const Tabs: React.FC<TabsProps> = ({ onTabChange, currentTab }) => {
+const Tabs: React.FC = () => {
     return (
         <div className="tab-container">
-            <span
-                className={currentTab === "Main" ? "selected" : "tab"}
-                onClick={() => onTabChange("Main")}
+            <NavLink
+                to="/"
+                style={{ textDecoration: "none" }}
+                className={({ isActive }) => (isActive ? "selected" : "tab")}
+                end
             >
                 Main
-            </span>
-            <span
-                className={currentTab === "Settings" ? "selected" : "tab"}
-                onClick={() => onTabChange("Settings")}
+            </NavLink>
+            <NavLink
+                to="/settings"
+                style={{ textDecoration: "none" }}
+                className={({ isActive }) => (isActive ? "selected" : "tab")}
             >
                 Settings
-            </span>
+            </NavLink>
         </div>
     );
 };
