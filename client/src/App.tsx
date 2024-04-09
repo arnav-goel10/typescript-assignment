@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/navBar/NavBar";
 import Settings from "./pages/Settings/Settings";
 import Main from "./pages/Main/Main";
 

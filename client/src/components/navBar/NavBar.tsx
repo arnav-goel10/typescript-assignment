@@ -1,5 +1,5 @@
 import React from "react";
-import TitleAndTabs from "./TitleAndTabs/TitleAndTabs";
+import TitleAndTabs from "./titleAndTabs/TitleAndTabs";
 import "./NavBar.css";
 
 interface NavBarProps {}

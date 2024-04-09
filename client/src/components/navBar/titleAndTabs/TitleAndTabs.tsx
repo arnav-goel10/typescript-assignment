@@ -1,7 +1,8 @@
 import React from "react";
-import Title from "./Title/Title"; // Update the path as necessary
-import Tabs from "./Tabs/Tabs";
+
 import "./TitleAndTabs.css";
+import Title from "./Title/Title";
+import Tabs from "./Tabs/Tabs";
 
 interface TitleAndTabsProps {}
 
